@@ -14,5 +14,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('kas',[
+        "title"=>"Kas Kantor"
+    ]);
 });
+
+Route::get('/pengeluaran', function () {
+    return view('pengeluaran',[
+        "title"=>"Data Pengeluaran"
+    ]);
+});
+
+Route::get('/karyawan', function () {
+    return view('karyawan',[
+        "title"=>"Data Karyawan"
+    ]);
+});
+
