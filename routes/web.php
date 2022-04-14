@@ -30,4 +30,9 @@ Route::get('/karyawan', function () {
         "title"=>"Data Karyawan"
     ]);
 });
+Route::get('/laptop', function () {
+    return view('laptop',[
+        "title"=>"Data Laptop"
+    ]);
+});
 

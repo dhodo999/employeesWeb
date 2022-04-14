@@ -290,9 +290,9 @@ $(document).ready(function(){
 							</span>
 						</th>
 						<th>Nama</th>
-						<th>Email</th>
-						<th>Address</th>
-						<th>Phone</th>
+						<th>Merk Laptop</th>
+						<th>Serial Number</th>
+						<th>Tanggal Ambil</th>
 						<th>Actions</th>
 					</tr>
 				</thead>
@@ -404,19 +404,19 @@ $(document).ready(function(){
 				</div>
 				<div class="modal-body">					
 					<div class="form-group">
-						<label>Name</label>
+						<label>Nama</label>
 						<input type="text" class="form-control" required>
 					</div>
 					<div class="form-group">
-						<label>Email</label>
+						<label>Merk Laptop</label>
 						<input type="email" class="form-control" required>
 					</div>
 					<div class="form-group">
-						<label>Address</label>
+						<label>Serial Number</label>
 						<textarea class="form-control" required></textarea>
 					</div>
 					<div class="form-group">
-						<label>Phone</label>
+						<label>Tangal Ambil</label>
 						<input type="text" class="form-control" required>
 					</div>					
 				</div>
@@ -439,19 +439,19 @@ $(document).ready(function(){
 				</div>
 				<div class="modal-body">					
 					<div class="form-group">
-						<label>Name</label>
+						<label>Nama</label>
 						<input type="text" class="form-control" required>
 					</div>
 					<div class="form-group">
-						<label>Email</label>
+						<label>Merk Laptop</label>
 						<input type="email" class="form-control" required>
 					</div>
 					<div class="form-group">
-						<label>Address</label>
+						<label>Serial Number</label>
 						<textarea class="form-control" required></textarea>
 					</div>
 					<div class="form-group">
-						<label>Phone</label>
+						<label>Tanggal Ambil</label>
 						<input type="text" class="form-control" required>
 					</div>					
 				</div>
