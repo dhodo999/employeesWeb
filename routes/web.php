@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\KaryawanController;
+use App\Http\Controllers\KasController;
+use App\Http\Controllers\LaptopController;
+use App\Http\Controllers\PengeluaranController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,9 +33,15 @@ Route::get('/karyawan', function () {
         "title"=>"Data Karyawan"
     ]);
 });
+
 Route::get('/laptop', function () {
     return view('laptop',[
         "title"=>"Data Laptop"
     ]);
 });
+
+Route::resource('/kas', KasController::Class);
+Route::resource('/karyawan', KaryawanController::Class);
+Route::resource('/laptop', LaptopController::Class);
+Route::resource('/pengeluaran', PengeluaranController::Class);
 

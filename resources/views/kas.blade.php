@@ -293,7 +293,6 @@ $(document).ready(function(){
 						<th>Saldo</th>
 						<th>Deskripsi</th>
 						<th>Pemasukan</th>
-                        <th>pengeluaran</th>
                         <th>Pembayaran</th>
 						<th>Actions</th>
 					</tr>
@@ -302,124 +301,17 @@ $(document).ready(function(){
 					<tr>
 						<td>
 							<span class="custom-checkbox">
-								<input type="checkbox" id="checkbox1" name="options[]" value="1">
-								<label for="checkbox1"></label>
-							</span>
-						</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-                        <td></td>
-						<td></td>
-						<td>
-							<a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-							<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<span class="custom-checkbox">
-								<input type="checkbox" id="checkbox2" name="options[]" value="1">
-								<label for="checkbox2"></label>
-							</span>
-						</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-                        <td></td>
-						<td></td>
-						<td>
-							<a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-							<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<span class="custom-checkbox">
 								<input type="checkbox" id="checkbox3" name="options[]" value="1">
 								<label for="checkbox3"></label>
 							</span>
 						</td>
+						
 						<td></td>
 						<td></td>
 						<td></td>
 						<td></td>
                         <td></td>
-						<td></td>
-						<td>
-							<a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-							<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<span class="custom-checkbox">
-								<input type="checkbox" id="checkbox4" name="options[]" value="1">
-								<label for="checkbox4"></label>
-							</span>
-						</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-                        <td></td>
-						<td></td>
-						<td>
-							<a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-							<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-						</td>
-					</tr>					
-					<tr>
-						<td>
-							<span class="custom-checkbox">
-								<input type="checkbox" id="checkbox5" name="options[]" value="1">
-								<label for="checkbox5"></label>
-							</span>
-						</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-                        <td></td>
-						<td></td>
-						<td>
-							<a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-							<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-						</td>
-					</tr>
-                    <tr>
-						<td>
-							<span class="custom-checkbox">
-								<input type="checkbox" id="checkbox1" name="options[]" value="1">
-								<label for="checkbox1"></label>
-							</span>
-						</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-                        <td></td>
-						<td></td>
-						<td>
-							<a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-							<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-						</td>
-					</tr>
-                    <tr>
-						<td>
-							<span class="custom-checkbox">
-								<input type="checkbox" id="checkbox1" name="options[]" value="1">
-								<label for="checkbox1"></label>
-							</span>
-						</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-                        <td></td>
-						<td></td>
+						
 						<td>
 							<a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
 							<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
@@ -441,11 +333,12 @@ $(document).ready(function(){
 		</div>
 	</div>        
 </div>
-<!-- Edit Modal HTML -->
+<!-- Create Modal HTML -->
 <div id="addEmployeeModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form>
+			<form method="post" action="{{route('kas.store')}}">
+				{{csrf_field()}}
 				<div class="modal-header">						
 					<h4 class="modal-title">Tambah Data</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -453,27 +346,23 @@ $(document).ready(function(){
 				<div class="modal-body">					
 					<div class="form-group">
 						<label>Tanggal</label>
-						<input type="text" class="form-control" required>
+						<input type="text" class="form-control" required name="tanggal">
 					</div>
 					<div class="form-group">
 						<label>Saldo</label>
-						<input type="email" class="form-control" required>
+						<input type="text" class="form-control" required name="saldo">
 					</div>
 					<div class="form-group">
 						<label>Deskripsi</label>
-						<textarea class="form-control" required></textarea>
+						<textarea class="form-control" required name="deskripsi"></textarea>
 					</div>
 					<div class="form-group">
 						<label>Pemasukan</label>
-						<input type="text" class="form-control" required>
-					</div>
-                    <div class="form-group">
-						<label>Pengeluaran</label>
-						<input type="text" class="form-control" required>
+						<input type="text" class="form-control" required name="pemasukan">
 					</div>
                     <div class="form-group">
 						<label>Pembayaran</label>
-						<input type="text" class="form-control" required>
+						<input type="text" class="form-control" required name="pembayaran">
 					</div>					
 				</div>
 				<div class="modal-footer">
@@ -500,7 +389,7 @@ $(document).ready(function(){
 					</div>
 					<div class="form-group">
 						<label>Saldo</label>
-						<input type="email" class="form-control" required>
+						<input type="text" class="form-control" required>
 					</div>
 					<div class="form-group">
 						<label>Deskripsi</label>
@@ -508,10 +397,6 @@ $(document).ready(function(){
 					</div>
 					<div class="form-group">
 						<label>Pemasukan</label>
-						<input type="text" class="form-control" required>
-					</div>
-                    <div class="form-group">
-						<label>Pengeluaran</label>
 						<input type="text" class="form-control" required>
 					</div>
                     <div class="form-group">
