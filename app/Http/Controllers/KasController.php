@@ -41,7 +41,7 @@ class KasController extends Controller
         $kas = Kas::Create($request->all());
         $kas->save();
 
-        return redirect();
+        return redirect('kas');
     }
 
     /**

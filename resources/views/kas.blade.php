@@ -276,7 +276,8 @@ $(document).ready(function(){
 						<h2>Kas <b>Kantor</b></h2>
 					</div>
 					<div class="col-sm-6">
-						<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Tambah Data Baru</span></a>						
+						<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Tambah Data Baru</span></a>	
+						<a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>					
 					</div>
 				</div>
 			</div>
@@ -291,7 +292,6 @@ $(document).ready(function(){
 						</th>
 						<th>Tanggal</th>
 						<th>Saldo</th>
-						<th>Deskripsi</th>
 						<th>Pemasukan</th>
                         <th>Pembayaran</th>
 						<th>Actions</th>
@@ -310,7 +310,6 @@ $(document).ready(function(){
 						<td></td>
 						<td></td>
 						<td></td>
-                        <td></td>
 						
 						<td>
 							<a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
@@ -353,10 +352,6 @@ $(document).ready(function(){
 						<input type="text" class="form-control" required name="saldo">
 					</div>
 					<div class="form-group">
-						<label>Deskripsi</label>
-						<textarea class="form-control" required name="deskripsi"></textarea>
-					</div>
-					<div class="form-group">
 						<label>Pemasukan</label>
 						<input type="text" class="form-control" required name="pemasukan">
 					</div>
@@ -392,10 +387,6 @@ $(document).ready(function(){
 						<input type="text" class="form-control" required>
 					</div>
 					<div class="form-group">
-						<label>Deskripsi</label>
-						<textarea class="form-control" required></textarea>
-					</div>
-					<div class="form-group">
 						<label>Pemasukan</label>
 						<input type="text" class="form-control" required>
 					</div>
@@ -422,8 +413,8 @@ $(document).ready(function(){
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 				</div>
 				<div class="modal-body">					
-					<p>Are you sure you want to delete these Records?</p>
-					<p class="text-warning"><small>This action cannot be undone.</small></p>
+					<p>Yakin ingin menghapus data?</p>
+					<p class="text-warning"><small>Data yang sudah dihapus tidak bisa dikembalikan!</small></p>
 				</div>
 				<div class="modal-footer">
 					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">

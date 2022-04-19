@@ -276,7 +276,8 @@ $(document).ready(function(){
 						<h2>Data <b>Pengeluaran</b></h2>
 					</div>
 					<div class="col-sm-6">
-						<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Tambah Data Baru</span></a>						
+						<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Tambah Data Baru</span></a>	
+						<a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>					
 					</div>
 				</div>
 			</div>
@@ -289,10 +290,10 @@ $(document).ready(function(){
 								<label for="selectAll"></label>
 							</span>
 						</th>
-						<th>Nama</th>
-						<th>Email</th>
-						<th>Address</th>
-						<th>Phone</th>
+						<th>Tanggal</th>
+						<th>Deskripsi</th>
+						<th>Pengeluaran</th>
+						<th>Pembayaran</th>
 						<th>Actions</th>
 					</tr>
 				</thead>
@@ -329,31 +330,32 @@ $(document).ready(function(){
 		</div>
 	</div>        
 </div>
-<!-- Edit Modal HTML -->
+<!-- Create Modal HTML -->
 <div id="addEmployeeModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form>
+			<form method="post" action="{{route('pengeluaran.store')}}">
+				{{csrf_field()}}
 				<div class="modal-header">						
 					<h4 class="modal-title">Tambah Data</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 				</div>
 				<div class="modal-body">					
 					<div class="form-group">
-						<label>Name</label>
-						<input type="text" class="form-control" required>
+						<label>Tanggal</label>
+						<input type="text" class="form-control" required name="tanggal">
 					</div>
 					<div class="form-group">
-						<label>Email</label>
-						<input type="email" class="form-control" required>
+						<label>Deskripsi</label>
+						<textarea class="form-control" required name="deskripsi"></textarea>
 					</div>
 					<div class="form-group">
-						<label>Address</label>
-						<textarea class="form-control" required></textarea>
+						<label>Pengeluaran</label>
+						<input type="text" class="form-control" required name="pengeluaran">
 					</div>
 					<div class="form-group">
-						<label>Phone</label>
-						<input type="text" class="form-control" required>
+						<label>Pembayaran</label>
+						<input type="text" class="form-control" required name="pembayaran">
 					</div>					
 				</div>
 				<div class="modal-footer">
@@ -375,20 +377,20 @@ $(document).ready(function(){
 				</div>
 				<div class="modal-body">					
 					<div class="form-group">
-						<label>Name</label>
+						<label>Tanggal</label>
 						<input type="text" class="form-control" required>
 					</div>
 					<div class="form-group">
-						<label>Email</label>
-						<input type="email" class="form-control" required>
-					</div>
-					<div class="form-group">
-						<label>Address</label>
+						<label>Deskripsi</label>
 						<textarea class="form-control" required></textarea>
 					</div>
 					<div class="form-group">
-						<label>Phone</label>
+						<label>Pengeluaran</label>
 						<input type="text" class="form-control" required>
+					</div>
+					<div class="form-group">
+						<label>Pembayaran</label>
+						<input type="text" class="form-control" required name="pembayaran">
 					</div>					
 				</div>
 				<div class="modal-footer">
@@ -409,8 +411,8 @@ $(document).ready(function(){
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 				</div>
 				<div class="modal-body">					
-					<p>Are you sure you want to delete these Records?</p>
-					<p class="text-warning"><small>This action cannot be undone.</small></p>
+					<p>Yakin ingin menghapus data?</p>
+					<p class="text-warning"><small>Data yang sudah dihapus tidak bisa dikembalikan!</small></p>
 				</div>
 				<div class="modal-footer">
 					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">

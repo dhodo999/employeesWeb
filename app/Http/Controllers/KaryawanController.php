@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Karyawan;
 
 class KaryawanController extends Controller
 {
@@ -36,7 +37,10 @@ class KaryawanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $karyawan = Karyawan::Create($request->all());
+        $karyawan->save();
+
+        return redirect('karyawan');
     }
 
     /**

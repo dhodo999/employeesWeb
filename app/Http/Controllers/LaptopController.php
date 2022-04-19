@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Laptop;
 use Illuminate\Http\Request;
 
 class LaptopController extends Controller
@@ -36,7 +37,10 @@ class LaptopController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $laptop = Laptop::Create($request->all());
+        $laptop->save();
+
+        return redirect('laptop');
     }
 
     /**

@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Laptop extends Model
 {
-    use HasFactory;
+    protected $table = 'laptop';
+    protected $primaryKey = 'id';
+    protected $fillable = ['nama', 'merk', 'serial', 'tglambil'];
 }

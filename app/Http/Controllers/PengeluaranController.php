@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pengeluaran;
 use Illuminate\Http\Request;
 
 class PengeluaranController extends Controller
@@ -36,7 +37,10 @@ class PengeluaranController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $pengeluaran = Pengeluaran::Create($request->all());
+        $pengeluaran->save();
+
+        return redirect('pengeluaran');
     }
 
     /**

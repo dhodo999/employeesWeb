@@ -276,7 +276,8 @@ $(document).ready(function(){
 						<h2>Data <b>Pengeluaran</b></h2>
 					</div>
 					<div class="col-sm-6">
-						<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Tambah Data Baru</span></a>						
+						<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Tambah Data Baru</span></a>
+						<a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
 					</div>
 				</div>
 			</div>
@@ -329,11 +330,12 @@ $(document).ready(function(){
 		</div>
 	</div>        
 </div>
-<!-- Edit Modal HTML -->
+<!-- Create Modal HTML -->
 <div id="addEmployeeModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form>
+			<form method="post" action="{{route('laptop.store')}}">
+				{{csrf_field()}}
 				<div class="modal-header">						
 					<h4 class="modal-title">Tambah Data</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -341,19 +343,19 @@ $(document).ready(function(){
 				<div class="modal-body">					
 					<div class="form-group">
 						<label>Nama</label>
-						<input type="text" class="form-control" required>
+						<input type="text" class="form-control" required name="nama">
 					</div>
 					<div class="form-group">
 						<label>Merk Laptop</label>
-						<input type="text" class="form-control" required>
+						<input type="text" class="form-control" required name="merk">
 					</div>
 					<div class="form-group">
 						<label>Serial Number</label>
-						<textarea class="form-control" required></textarea>
+						<input type="text" class="form-control" required name="serial">
 					</div>
 					<div class="form-group">
 						<label>Tangal Ambil</label>
-						<input type="text" class="form-control" required>
+						<input type="text" class="form-control" required name="tglambil">
 					</div>					
 				</div>
 				<div class="modal-footer">
@@ -409,8 +411,8 @@ $(document).ready(function(){
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 				</div>
 				<div class="modal-body">					
-					<p>Are you sure you want to delete these Records?</p>
-					<p class="text-warning"><small>This action cannot be undone.</small></p>
+					<p>Yakin ingin menghapus data?</p>
+					<p class="text-warning"><small>Data yang sudah dihapus tidak bisa dikembalikan!</small></p>
 				</div>
 				<div class="modal-footer">
 					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">

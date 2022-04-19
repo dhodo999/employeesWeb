@@ -9,5 +9,7 @@ class Kas extends Model
 {
     protected $table = 'kas';
     protected $primaryKey = 'id';
-    protected $fillable = ['tanggal', 'saldo', 'deskripsi', 'pemasukan', 'pembayaran'];
+    protected $fillable = ['tanggal', 'saldo', 'pemasukan', 'pembayaran'];
 }
+
+
