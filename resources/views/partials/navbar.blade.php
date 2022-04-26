@@ -7,7 +7,10 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link {{ ( $title === 'Kas Kantor') ? 'active' : ''}}" aria-current="page" href="/">Kas Kantor</a>
+            <a class="nav-link {{ ( $title === 'Dashboard') ? 'active' : ''}}" aria-current="page" href="/">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {{ ( $title === 'Kas Kantor') ? 'active' : ''}}" aria-current="page" href="kas">Kas Kantor</a>
           </li>
           <li class="nav-item">
             <a class="nav-link {{ ( $title === 'Data Pengeluaran') ? 'active' : ''}}" href="pengeluaran">Data Pengeluaran</a>

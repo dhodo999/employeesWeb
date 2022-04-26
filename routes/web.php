@@ -15,8 +15,13 @@ use App\Http\Controllers\PengeluaranController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
+    return view('dashboard',[
+        "title"=>"Dashboard"
+    ]);
+});
+
+Route::get('/kas', function () {
     return view('kas',[
         "title"=>"Kas Kantor"
     ]);
